@@ -25,7 +25,7 @@ def get_lista(cmd_output: str) -> List[Any]:
     Função de utilidade que retorna uma lista contendo os valores numéricos do  
     output de um comando no game.
     """
-    nums = re.findall("\d+", cmd_output)
+    nums = re.findall(r"\d+", cmd_output)
 
     return nums
 
