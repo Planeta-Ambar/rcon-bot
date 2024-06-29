@@ -27,15 +27,17 @@ async def on_ready():
         temp_atual = time.time()
         temp_passado = temp_atual - start
 
-        if temp_passado == dur_em_segundos - (5 * 60):
+        if temp_passado >= dur_em_segundos - (5 * 60) and temp_passado < dur_em_segundos - (5 * 60) + 1:
             print(f"Atenção: o bot será reiniciado em 5 minutos!")
-    
+
         if temp_passado >= dur_em_segundos:
             print("O bot está reiniciando.")
-            
+
             break
-    
+
         time.sleep(1)  # Previne alto uso de CPU
+
+        config.client.close()
 
 
 config.client.run(config.TOKEN)

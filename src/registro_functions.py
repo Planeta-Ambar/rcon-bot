@@ -37,7 +37,7 @@ async def registrar(interaction: discord.Interaction, id_alderon: str) -> None:
         else:
             # Verifica se o ID fornecido pelo usuário está no padrão correto
             # Se não estiver, uma mensagem de erro será exibida
-            padrao = re.match("(\d{3}\-\d{3}\-\d{3})", id_alderon)
+            padrao = re.match(r"(\d{3}\-\d{3}\-\d{3})", id_alderon)
 
             if padrao:
                 session.add(player_manager.get_player().get_player())
