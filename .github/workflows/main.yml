@@ -25,5 +25,11 @@ jobs:
         pip install sqlalchemy
         pip install pycryptodome
     - name: Run bot
+      env:
+        DISCORD_SERVER: ${{ secrets.DISCORD_SERVER }}
+        DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+        HOST: ${{ secrets.HOST }}
+        PASSWORD: ${{ secrets.PASSWORD }}
+        PORT: ${{ secrets.PORT }}
       run: |
         python bot.py
